@@ -5,7 +5,6 @@ pipeline {
         booleanParam(name: "RUN_INTEGRATION_TESTS", defaultValue: true)
     }
     stages {
-        stage('Tests') {
 			stage('Unit tests') {
 				steps {
 					sh './mvnw test -D testGroups=unit'
@@ -41,6 +40,5 @@ pipeline {
 					echo 'Deploying...'
 				}
 			}
-        }
     }
 }
